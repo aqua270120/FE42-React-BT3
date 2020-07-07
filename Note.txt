@@ -1,0 +1,3 @@
+Component: 
+        -Stateful component (class)
+        -Stateless component (function)
