@@ -1,9 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import BaiTap1 from './BaiTap1/index';
-import BaiTap2 from './layout-bootstrap/index'
-import BaiTap3 from './BaiTap3/index'
+// import BaiTap1 from './BaiTap1/index';
+// import BaiTap2 from './layout-bootstrap/index'
+// import BaiTap3 from './BaiTap3/index'
+// import RenderingElements from './rendering-elements';
+// import HandlingEvents from './HandlingEvents';
+// import ExHandlingEvent from './HandlingEvents/example';
+// import State from './state';
+// import ListNKeys from './ListKey';
+// import CarShopping from './CarShopping'
+import BTList from './BaiTapList';
 function App() {
   return (
     // <div className="App">
@@ -25,7 +32,14 @@ function App() {
     <div>
       {/* <BaiTap1 /> */}
       {/* <BaiTap2 /> */}
-      <BaiTap3 />
+      {/* <BaiTap3 /> */}
+      {/* <RenderingElements /> */}
+      {/* <HandlingEvents /> */}
+      {/* <ExHandlingEvent /> */}
+      {/* <State /> */}
+      {/* <ListNKeys /> */}
+      {/* <CarShopping /> */}
+      <BTList />
     </div>
   );
 }
