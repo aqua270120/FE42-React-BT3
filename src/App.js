@@ -10,7 +10,10 @@ import './App.css';
 // import State from './state';
 // import ListNKeys from './ListKey';
 // import CarShopping from './CarShopping'
-import BTList from './BaiTapList';
+// import BTList from './BaiTapList';
+// import Props from './props';
+// import LiftingStateUp from './Lifting-State-Up'
+import LiftingStateUpCart from './Lifiting-State-Up-Cart'
 function App() {
   return (
     // <div className="App">
@@ -39,7 +42,10 @@ function App() {
       {/* <State /> */}
       {/* <ListNKeys /> */}
       {/* <CarShopping /> */}
-      <BTList />
+      {/* <BTList /> */}
+      {/* <Props /> */}
+      {/* <LiftingStateUp /> */}
+      <LiftingStateUpCart />
     </div>
   );
 }
