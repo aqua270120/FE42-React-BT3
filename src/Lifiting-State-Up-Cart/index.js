@@ -82,11 +82,17 @@ export default class LiftingStateUpCart extends Component {
   }
   handleDelCart = (product) => {
     let listCart = this.state.listCart;
-    for (var i = 0; i < listCart.length; i++) {
-      if (listCart[i].maSP === product.maSP) {
-        listCart.splice(listCart[i], 1);
+    listCart.forEach((item, index) => {
+      if (item.maSP === product.maSP) {
+        listCart.splice(item[index], 1);
       }
     }
+    );
+    // for (var i = 0; i < listCart.length; i++) {
+    //   if (listCart[i].maSP === product.maSP) {
+    //     listCart.splice(listCart[i], 1);
+    //   }
+    // }
     this.setState({
       listCart
 
