@@ -13,7 +13,8 @@ import './App.css';
 // import BTList from './BaiTapList';
 // import Props from './props';
 // import LiftingStateUp from './Lifting-State-Up'
-import LiftingStateUpCart from './Lifiting-State-Up-Cart'
+// import LiftingStateUpCart from './Lifiting-State-Up-Cart'
+import Home from './user-management';
 function App() {
   return (
     // <div className="App">
@@ -45,7 +46,8 @@ function App() {
       {/* <BTList /> */}
       {/* <Props /> */}
       {/* <LiftingStateUp /> */}
-      <LiftingStateUpCart />
+      {/* <LiftingStateUpCart /> */}
+      <Home />
     </div>
   );
 }

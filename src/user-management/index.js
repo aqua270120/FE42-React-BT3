@@ -27,7 +27,23 @@ class Home extends Component {
     };
   }
 
+  delUser = (user) => {
+    let userList = this.state.userList;
+    userList.forEach((item, index) => {
+      if (item.id === user.id) {
+        userList.splice(item[index], 1);
+      }
+    });
+
+    this.setState({
+      userList
+    }
+      , () => {
+        console.log("Del Thanh Cong")
+      })
+  }
   render() {
+    const { userList } = this.state;
     return (
       <div className="container">
         <h1 className="display-4 text-center my-3">User Management</h1>
@@ -41,7 +57,7 @@ class Home extends Component {
             Add User
           </button>
         </div>
-        <Users />
+        <Users userList={userList} delUser={this.delUser} />
         <Modal />
       </div>
     );

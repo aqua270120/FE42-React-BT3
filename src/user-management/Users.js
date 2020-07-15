@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import UserItem from "./UserItem";
 
 class Users extends Component {
+  renderHTML = () => {
+    const { userList, delUser } = this.props;
+    return userList.map(user => {
+      return (
+        <UserItem user={user} key={user.id} delUser={delUser} />
+      )
+    });
+  }
   render() {
+
     return (
       <div>
         <table className="table">
@@ -16,9 +25,8 @@ class Users extends Component {
             </tr>
           </thead>
           <tbody>
-            <UserItem />
-            <UserItem />
-            <UserItem />
+
+            {this.renderHTML()}
           </tbody>
         </table>
       </div>
