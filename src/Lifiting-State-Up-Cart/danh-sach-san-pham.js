@@ -8,13 +8,12 @@ export default class DanhSachSanPham extends Component {
     this.props.detailProduct(product);
   }
 
+
   addCart = (product) => {
     this.props.addCart(product);
   }
   renderHTML = () => {
-    const { dsSanPham } = this.props;
-    const { detailProduct } = this.props;
-    const { addCart } = this.props;
+    const { dsSanPham, detailProduct, addCart } = this.props;
     return dsSanPham.map((product) => {
       return (
         <SanPham key={product.maSP} sanPham={product} detailProduct={detailProduct} addCart={addCart} />

@@ -7,6 +7,11 @@ export default class Modal extends Component {
   delProduct = item => {
     this.props.delCart(item);
   }
+
+  formatMoney = (money, quantity) => {
+    return new Intl.NumberFormat().format(money * quantity);
+
+  }
   renderCartProduct = () => {
     const { listCart } = this.props;
     if (listCart.length > 0) {
@@ -19,10 +24,12 @@ export default class Modal extends Component {
               <img src={item.hinhAnh} width={50} alt="" />
             </td>
             <td>
+              {/* Ham co tham so thi p viet theo kieu la () =>{this.handleCartUpDown(item, 2)} */}
+              {/* Ham k co tham so thi viet don gian la this.handleCartUpDown()  */}
               <button onClick={() => { this.handleCartUpDown(item, 2) }}>-</button>{item.soLuong}<button onClick={() => { this.handleCartUpDown(item, 1) }}>+</button>
             </td>
             <td>{item.giaBan}</td>
-            <td>{item.giaBan * item.soLuong}</td>
+            <td>{this.formatMoney(item.giaBan, item.soLuong)} </td>
             <td>
               <button className="btn btn-danger" onClick={() => { this.delProduct(item) }}>Delete</button>
             </td>

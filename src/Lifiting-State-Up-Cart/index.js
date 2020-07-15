@@ -24,7 +24,6 @@ export default class LiftingStateUpCart extends Component {
     listCart.forEach(item => {
       if (item.maSP === product.maSP) {
         product.soLuong += 1;
-
         flag = true;
       }
     })
@@ -88,11 +87,6 @@ export default class LiftingStateUpCart extends Component {
       }
     }
     );
-    // for (var i = 0; i < listCart.length; i++) {
-    //   if (listCart[i].maSP === product.maSP) {
-    //     listCart.splice(listCart[i], 1);
-    //   }
-    // }
     this.setState({
       listCart
 
@@ -105,11 +99,10 @@ export default class LiftingStateUpCart extends Component {
     this.state.totalAmount = 0;
     this.state.listCart.forEach(item => {
       this.state.totalAmount += item.soLuong;
-      console.log(this.state.totalAmount)
     })
   }
   render() {
-    const { detailProduct } = this.state;
+    const { detailProduct, listCart, listProduct } = this.state;
     return (
       <div>
         <h3 className="title">Bài tập giỏ hàng</h3>
@@ -125,8 +118,8 @@ export default class LiftingStateUpCart extends Component {
             Giỏ hàng ({this.state.totalAmount})
           </button>
         </div>
-        <DanhSachSanPham dsSanPham={this.state.listProduct} detailProduct={this.handleDetailProduct} addCart={this.handleAddCart} />
-        <Modal listCart={this.state.listCart} handleCartUpDown={this.handleCartUpDown} delCart={this.handleDelCart} />
+        <DanhSachSanPham dsSanPham={listProduct} detailProduct={this.handleDetailProduct} addCart={this.handleAddCart} />
+        <Modal listCart={listCart} handleCartUpDown={this.handleCartUpDown} delCart={this.handleDelCart} />
         <div className="row">
           <div className="col-sm-5">
             <img className="img-fluid" src="./img/vsphone.jpg" alt="" />
