@@ -9,7 +9,7 @@ export default class Modal extends Component {
   }
 
   formatMoney = (money, quantity) => {
-    return new Intl.NumberFormat().format(money * quantity);
+    return new Intl.NumberFormat().format(money * quantity) + " VND";
 
   }
   renderCartProduct = () => {

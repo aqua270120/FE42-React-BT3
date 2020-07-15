@@ -39,44 +39,21 @@ export default class LiftingStateUpCart extends Component {
       console.log("Succesfully added")
     });
   };
-
-  handleCartAmount = () => {
-    let total = 0;
-    this.state.listCart.forEach(item => {
-      total += 1;
-    });
-  }
   handleCartUpDown = (product, option) => {
     let listCart = this.state.listCart;
-    let flag = false;
     if (option === 1) {
-      listCart.forEach(item => {
-        if (item.maSP === product.maSP) {
-          product.soLuong += 1;
-          flag = true;
-        }
-      })
-
-      if (flag === false) {
-        product.soLuong = 1;
-        listCart.push(product);
-      }
+      product.soLuong += 1;
     }
     if (option === 2) {
       if (product.soLuong > 1) {
         product.soLuong -= 1;
-        this.setState({
-          listCart
-        }, () => {
-          console.log("Succesfully remove")
-        });
       }
     }
     this.setState({
       listCart
     }, () => {
       console.log(listCart)
-      console.log("Succesfully added")
+      console.log("Succesfully")
     });
   }
   handleDelCart = (product) => {
@@ -103,6 +80,7 @@ export default class LiftingStateUpCart extends Component {
   }
   render() {
     const { detailProduct, listCart, listProduct } = this.state;
+    { this.countTotal() }
     return (
       <div>
         <h3 className="title">Bài tập giỏ hàng</h3>
@@ -114,7 +92,6 @@ export default class LiftingStateUpCart extends Component {
             data-toggle="modal"
             data-target="#myModal"
           >
-            {this.countTotal()}
             Giỏ hàng ({this.state.totalAmount})
           </button>
         </div>
