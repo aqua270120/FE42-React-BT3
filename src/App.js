@@ -14,7 +14,8 @@ import './App.css';
 // import Props from './props';
 // import LiftingStateUp from './Lifting-State-Up'
 // import LiftingStateUpCart from './Lifiting-State-Up-Cart'
-import Home from './user-management';
+// import Home from './user-management';
+import Parent from './LifeCycle';
 function App() {
   return (
     // <div className="App">
@@ -47,7 +48,8 @@ function App() {
       {/* <Props /> */}
       {/* <LiftingStateUp /> */}
       {/* <LiftingStateUpCart /> */}
-      <Home />
+      {/* <Home /> */}
+      <Parent />
     </div>
   );
 }

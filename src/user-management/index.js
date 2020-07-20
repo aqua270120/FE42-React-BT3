@@ -26,7 +26,13 @@ class Home extends Component {
       ]
     };
   }
-
+  handleAddUser = (user) => {
+    let userList = [...this.state.userList];
+    userList.push(user);
+    this.setState({
+      userList
+    })
+  }
   delUser = (user) => {
     let userList = this.state.userList;
     userList.forEach((item, index) => {
@@ -58,7 +64,7 @@ class Home extends Component {
           </button>
         </div>
         <Users userList={userList} delUser={this.delUser} />
-        <Modal />
+        <Modal addUser={this.handleAddUser} />
       </div>
     );
   }
